@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"log/slog"
-	"myapp/internal/config"
-	"myapp/internal/log"
+
+	"github.com/SensusX/myapp/internal/config"
+	"github.com/SensusX/myapp/internal/log"
 )
 
 func main() {
