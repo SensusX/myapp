@@ -1,11 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"myapp/internal/config"
+)
 
 func main() {
-	fmt.Println("Hello, world!")
-}
+	_, err := config.ReadConfig()
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+		return
+	}
 
-func Greeter(name string) {
-	fmt.Println("Hello" + name + "!")
 }
