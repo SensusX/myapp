@@ -1,5 +1,8 @@
 env: "local" # local, dev, prod
-storage_path: "./storage/storage.db"
+storage:
+  storage_name: "PostgreSQL"
+  storage_type: "SQL"
+  storage_driver: "pgx"
 http_server: 
   address: "localhost:8090"
   timeout: 3s

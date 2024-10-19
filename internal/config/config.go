@@ -9,9 +9,16 @@ import (
 )
 
 type Config struct {
-	Env         string `yaml:"env" env-required:"true"`
-	StoragePath string `yaml:"storage_path" env-default:"./storage/storage.db"`
-	HTTPServer  `yaml:"http_server"`
+	Env        string `yaml:"env" env-required:"true"`
+	Storage    `yaml:"storage"`
+	HTTPServer `yaml:"http_server" env-required:"true"`
+}
+
+type Storage struct {
+	StorageName   string `yaml:"storage_name" env-default:"PostgreSQL"`
+	StorageType   string `yaml:"storage_type" env-default:"SQL"`
+	StorageDriver string `yaml:"storage_driver" env-default:"pgx"`
+	StoragePath   string `yaml:"storage_path" env-default:""`
 }
 
 type HTTPServer struct {
